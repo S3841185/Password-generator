@@ -23,6 +23,11 @@ def password_generator(pwd_len):
     ###### returns the password generated
     return pwd
 
+###### testing
+def save_password():
+    print("test - save password")
+
+
 
 ###### the main program
 def main():
@@ -45,8 +50,25 @@ def main():
         ###### calls the pasword generator function if the user input is int 12 or over
         if length >= 12:
             password = password_generator(length)
-            print(f"Your generated password is: {password}\n")           
+            print(f"Your generated password is: {password}\n")
+            
+            save_password_choice = input("Would you like to save this password? (y/n) ").lower()
+            
+            while True:
+                if save_password_choice == "y":
+                    save_password()
+                elif save_password_choice == "n":
+                    print("Password Not Saved, Returning to menu")
+                    break
+                else:
+                    print("Invalid Input, Try Again...")
+                    save_password_choice = input("Would you like to save this password? (y/n) ").lower()
+
         
+
+
+                
+
         ###### conditional statement, if the password length is under 12 characters, the program will ask the user to input another value
         if int(length) < 12:
             print("Password length is too low, try again.\n")               
