@@ -57,16 +57,13 @@ def main():
             while True:
                 if save_password_choice == "y":
                     save_password()
+                    break
                 elif save_password_choice == "n":
                     print("Password Not Saved, Returning to menu")
                     break
                 else:
                     print("Invalid Input, Try Again...")
                     save_password_choice = input("Would you like to save this password? (y/n) ").lower()
-
-        
-
-
                 
 
         ###### conditional statement, if the password length is under 12 characters, the program will ask the user to input another value
