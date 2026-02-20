@@ -23,9 +23,11 @@ def password_generator(pwd_len):
     ###### returns the password generated
     return pwd
 
-###### testing
-def save_password():
-    print("test - save password")
+###### Saving password to a file
+def save_password(password_to_save):
+   with open("Passwords.txt", "a+") as file_to_append:
+    file_to_append.write(f"{password_to_save}, ")
+    file_to_append.close()
 
 
 
@@ -56,7 +58,7 @@ def main():
             
             while True:
                 if save_password_choice == "y":
-                    save_password()
+                    save_password(password)
                     break
                 elif save_password_choice == "n":
                     print("Password Not Saved, Returning to menu")
